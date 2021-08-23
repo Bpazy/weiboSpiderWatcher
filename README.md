@@ -15,7 +15,7 @@ python3 -m weibo_spider
 # 配置监听用户
 # vim config.json
 
-# 配置监听用户和钉钉机器人，参考 watcher.config.json.sample
+# 配置监听用户和钉钉机器人，参考 watcher.config.sample.json
 # vim watcher.config.json
 python3 notifyLatestWeibo.py
 ```
