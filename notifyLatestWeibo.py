@@ -22,6 +22,11 @@ while True:
         break
 print(time + ': ' + latestBlog)
 
+with open('latest_weibo') as f:
+    if latestBlog.strip() == f.readline().strip():
+        exit(0)
+    f.write(latestBlog)
+
 url = 'https://oapi.dingtalk.com/robot/send?access_token={accessToken}'.format(accessToken=cfg['ding']['accessToken'])
 j = {
     "msgtype": "markdown",
