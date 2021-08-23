@@ -21,10 +21,16 @@ python3 notifyLatestWeibo.py
 ```
 
 ## 监听 weiboSpider 数据库文件变化
-也可以使用 inotifywait 监听文件变化来自动触发，比如:
+也可以使用 inotifywait 监听文件变化来自动触发本项目提供的脚本，比如:
 ```shell
 inotifywait -mrq -e modify,delete,create,attrib /home/ziyuan/weibo_spider/weibo/weibo_user/weibo_uid.txt | while read file 
 do 
     python3 notifyLatestWeibo.py
 done
+```
+
+## 其他
+weiboSpider 并不是常驻后台的，可以通过 crontab 每隔 10 分钟触发一次，比如:
+```shell
+*/10 * * * * cd /home/ziyuan/weibo_spider && python3 -m weibo_spider
 ```
