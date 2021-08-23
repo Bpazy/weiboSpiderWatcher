@@ -5,3 +5,5 @@ error.log
 watch.sh
 watcher.config.json
 nohup.out
+latest_weibo
+user_id_list_txt
